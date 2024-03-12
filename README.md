@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFarm</title>
+    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="chat.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <div class="img"><img src="Agro-logo-main.png" alt="Agri_Gold"></div>
+        <div class="name"><a href="AgroFarm.html">AGRO FARM</a></div>
+        <a href="http://localhost/karthik/sigupin.php">
+          <button  class="button">Sign In</button>
+        </a>
+    </div>
+    <div class="nav-bar">
+        <a href="AgroFarm.html">Home</a>
+        <a href="disease.html">Pest Control</a>
+        <a href="product.html">Products</a>
+        <a href="weather.html">Weather</a> 
+        <a href="about.html">About</a>
+        <a href="http://localhost/karthik/contact.php">Contact Us</a>
+      </div>
+    </header>
+    
+    <button class="chatbot-toggler">
+      <span class="material-symbols-rounded">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <p>Hello there!👋<br>I'm your friendly Farmer Chat Bot</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="card">
+      <img src="main-bg.jpg" style="width:100%">
+    </div>
+      <div class="intro">
+        <h1></h1>
+        Experience Them <br>
+        Real Agricultural
+      </div>
+    </div>
+        <section class="articles">
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="weather_main.png" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>WEATHER</h2>
+                <p>
+                    "Welcome to your daily weather insight for optimal farming! Stay ahead with our concise forecast, offering key details like temperature, precipitation, and conditions crucial for successful agricultural planning".
+                </p>
+                <a href="weather.html" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="pesticide_main.jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>PESTICIDE</h2>
+                <p>
+                  Pesticides in agriculture play a crucial role in protecting crops from pests, including insects, weeds, and diseases. Careful and responsible pesticide use is vital for sustainable farming and global food production.
+                </p>
+                <a href="pestcontrol.html" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article>
+            <div class="article-wrapper">
+              <figure>
+                <img src="diseases_main.jpg" alt="" />
+              </figure>
+              <div class="article-body">
+                <h2>DISEASES</h2>
+                <p>
+                  Diseases in agriculture, caused by pathogens like fungi, bacteria, and viruses, threaten crop health, yield, and food security. Effective disease management strategies are essential for sustainable and productive farming.
+                </p>
+                <a href="disease.html" class="read-more">
+                  Read more <span class="sr-only">about this is some title</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <hr style="margin-top: 30px;">
+        
+<section>
+  <div class="pest-main">
+    <div class="pest-control" >
+        <h2 style="font-family:' Bebas neue',cursive;font-size: 40px;">Pest Control</h2>
+      <p style=" font-size: 19px; margin-top: 30px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Pest control is a vital service aimed at managing and eliminating unwanted organisms that can cause harm to humans, property, and the environment. These pests can include insects, rodents, birds, and other organisms that can negatively impact health, agriculture, and infrastructure. The primary goal of pest control is to minimize or eradicate the presence of these pests, preventing damage and ensuring a safe and healthy living or working environment.</p>
+    </div> 
+    <video src="video-main.mp4" height=450px width=600px autoplay muted loop></video>
+</div>
+
+
+</section>
+
+<section>
+  <div class="offer-main">
+    <img src="main-1.jpg" alt="img" width="600px" height="400px">
+    <div class="offer">
+      <h2 style="margin-bottom: 30px; font-size: 40px; font-family: Bebas Neue, cursive; ">What we Offer you</h2>
+      <p style="font-size: 19px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">In the field of <b>
+        Agro Farm
+      </b> , our offerings encompass a comprehensive range of solutions designed to enhance productivity, sustainability, and efficiency for farmers and agribusinesses. We provide a diverse set of tools and services to address the evolving needs of the agricultural sector.</p>
+      <div class="unli">
+        <ul style="list-style: circle; gap: 3px;">
+          <li>Pest Control</li>
+          <li>Weather updates</li>
+          <li>Products</li>
+          <li>Diseases</li>
+          <li>AI Chat Bot</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr style="margin-top: 60px;">
+
+
+<div class="chat-bot">
+  <div class="chat-content">
+    <h2 style="margin-bottom: 30px; font-size: 40px; font-family: Bebas Neue, cursive;">AI Chat Bot</h2>
+    <p style="font-size: 18px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><b>Agro Bot</b> is your dedicated virtual assistant, specifically tailored for farmers. This AI chat bot is equipped with a range of features to enhance efficiency, productivity, and decision-making for the farm.
+      <br><br>
+    This <b>AI chatbot</b> for farmers offers real-time weather updates, crop advice, and market trends. With intuitive conversation, it helps optimize planting schedules, recommends fertilizers, and troubleshoots common issues. Empowering farmers with tailored insights, this bot is the perfect virtual partner for a thriving harvest.</p>
+  </div>
+
+    <div class="ai-img">
+      <img src="AI chat-bot-main.jpg" alt="img" width="550px" height="450px">
+    </div>
+</div>
+
+<hr style="margin-top: 20px;">
+
+        
+
+
+</body>
+</html>
