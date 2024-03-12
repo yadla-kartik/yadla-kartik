@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Weather Forecast Service" />
+    <meta name="author" content="Your Name" />
+    <title>Weather Forecast</title>
+    <!-- google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Add Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
+        integrity="sha512-d0olNN35C6VLiulAobxYHZiXJmq+vl+BGIgAxQtD5+kqudro/xNMvv2yIHAciGHpExsIbKX3iLg+0B6d0k4+ZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="bootstrap-icons.css" rel="stylesheet" type="text/css" />
+    <link href="swiper-bundle.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="simple-lightbox.min.css" />
+    <link href="weather-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="chat.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="img"><img src="Agro-logo-main.png" alt="Agri_Gold"></div>
+            <div class="name"><a href="AgroFarm.html">AGRO FARM</a></div>
+            <button class="button">Sign In</button>
+        </div>
+        <div class="nav-bar">
+            <a href="AgroFarm.html">Home</a>
+            <a href="Pest-control.html">Pest Control</a>
+            <a href="products.html">Products</a>
+            <a href="weather.html">Weather</a>
+            <a href="about.html">About</a>
+            <a href="http://localhost/karthik/contact.php">Contact Us</a>
+
+        </div>
+    </header>
+    <button class="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hello there!👋<br>I'm your friendly Farmer Chat Bot</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+        </div>
+    </div>
+    <section id="currentWeather" class="weather-search-section py-5">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6 text-center search-col">
+                    <div class="input-group">
+                        <input type="text" id="cityInput" placeholder="Search Your City Here">
+                        <button onclick="getWeather()" id="getwheather">Search...</button>
+                    </div>
+                    <div id="weatherInfo" class="mt-4"></div>
+                </div>
+                <div class="col-md-6 text-left weather-col">
+                    <div class="weather-box">
+                        <div class="weather-header">
+                            <h2 class="weather-location" id="cityName">
+                                <i class="fa-solid fa-location-dot" style="color: #ffffff; "></i>
+                                New Delhi
+                            </h2>
+                            <span class="weather-date" id="weatherDate">
+                                <i class="fa-regular fa-calendar"></i>
+                                Monday, August 28, 2023
+                            </span>
+                        </div>
+                        <div class="weather-content mt-5 d-flex justify-content-center align-items-start">
+                            <div class="weather-icon mx-4">
+                                <div class="sun-icon"></div>
+                            </div>
+                            <div class="weather-info text-center">
+                                <h1 class="weather-temp" id="temperature">
+                                    <i class="fa-solid fa-temperature-high" style="color: #ffffff; font-size:60px; "></i>
+                                    37°C
+                                </h1>
+                                <p class="weather-desc" id="conditions">
+                                    <span class="material-symbols-outlined">
+                                        water_drop
+                                        </span>
+                                    sunny
+                                </p>
+                                <div class="weather-details">
+                                    <p>
+                                        <i class="fa-solid fa-droplet" style="color: #ffffff;"></i>
+                                        Humidity 25.7%
+                                       
+                                    </p>
+                                    <p>
+                                        <span class="material-symbols-outlined">
+                                            humidity_mid
+                                            </span>
+                                        Feels like 27.1°C
+                                     
+                                    </p>
+                                    <p>
+                                        <span class="material-symbols-outlined">
+                                            air
+                                            </span>
+                                        Wind 7.6 km/h 290
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="hourlyForecast" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Hourly Forecast</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class=" card swiper-slide">
+                        <div class=" card-body hourly-item">
+                            <h4>6 AM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>68°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>7 AM</h4>
+                            <div class="sun-icon"></div>
+                            <p>69°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class=" card-body hourly-item">
+                            <h4>8 AM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>70°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                30%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>9 AM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>71°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>10 AM</h4>
+                            <div class="sun-icon"></div>
+                            <p>72°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>11 AM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>73°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                20%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>12 PM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>74°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>1 PM</h4>
+                            <div class="sun-icon"></div>
+                            <p>75°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>2 PM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>76°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                25%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>3 PM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>77°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>4 PM</h4>
+                            <div class="sun-icon"></div>
+                            <p>78°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>5 PM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>79°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                30%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>6 PM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>80°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>7 PM</h4>
+                            <div class="sun-icon"></div>
+                            <p>81°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>8 PM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>82°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                20%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>9 PM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>83°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>10 PM</h4>
+                            <div class="sun-icon"></div>
+                            <p>84°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>11 PM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>85°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                15%
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>12 AM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>68°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>1 AM</h4>
+                            <div class="sun-icon"></div>
+                            <p>69°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>2 AM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>70°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                30%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>3 AM</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <p>71°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                10%
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>4 AM</h4>
+                            <div class="sun-icon"></div>
+                            <p>72°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                5%
+                            </p>
+                        </div>
+                    </div>
+                    <div class=" card swiper-slide">
+                        <div class="card-body hourly-item">
+                            <h4>5 AM</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <p>73°F</p>
+                            <p>
+                                <i class="fa-solid fa-droplet" style="color: #1577c1;"></i>
+
+                                20%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section id="dailyForecast" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Weather Forecast</h2>
+            <ul class="nav nav-tabs justify-content-center mb-4" id="forecastTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="three-day-tab" data-toggle="tab" href="#threeDay" role="tab"
+                        aria-controls="threeDay" aria-selected="true">3 Days</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="seven-day-tab" data-toggle="tab" href="#extendedForecast" role="tab"
+                        aria-controls="sevenDay" aria-selected="false">7 Days</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ten-day-tab" data-toggle="tab" href="#extendedForecast" role="tab"
+                        aria-controls="tenDay" aria-selected="false">10 Days</a>
+                </li>
+            </ul>
+            <div class="tab-content swiper-container" id="forecastTabsContent">
+                <div class="tab-pane show active swiper-wrapper" id="threeDay" role="tabpanel" aria-labelledby="three-day-tab">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Monday, 29th August</h5>
+                                <div class="sun-icon"></div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+                                    75°F
+                                </h3>
+                                <p class="forecast-desc">Sunny</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+                                    Wind: 10 mph E
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Tuesday, 30th August</h5>
+                                <div class="cloudy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    73°F
+                                </h3>
+                                <p class="forecast-desc">Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+                                    Wind: 8 mph W
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 65%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Wednesday, 31st August</h5>
+                                <div class="rainy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    70°F
+                                </h3>
+                                <p class="forecast-desc">Rainy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+                                  
+                                    Wind: 12 mph N
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 70%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="sevenDay" role="tabpanel" aria-labelledby="seven-day-tab">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Monday, 29th August</h5>
+                                <div class="sun-icon"></div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+                                    
+                                    75°F
+                                </h3>
+                                <p class="forecast-desc">Sunny</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+                                 
+                                    Wind: 10 mph E
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Tuesday, 30th August</h5>
+                                <div class="cloudy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    73°F
+                                </h3>
+                                <p class="forecast-desc">Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 8 mph W
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 65%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Wednesday, 31st August</h5>
+                                <div class="rainy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    70°F
+                                </h3>
+                                <p class="forecast-desc">Rainy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 12 mph N
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 70%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Thursday, 1st September</h5>
+                                <div class="thunderstorm-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="lightning">
+                                        <div class="bolt"></div>
+                                        <div class="bolt2"></div>
+                                    </div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop2"></div>
+                                    <div class="raindrop3"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    68°F
+                                </h3>
+                                <p class="forecast-desc">Thunderstorm</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 14 mph S
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 75%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Friday, 2nd September</h5>
+                                <div class="partly-cloudy-icon">
+                                    <div class="sun"></div>
+                                    <div class="cloud"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+                                   
+                                    72°F
+                                </h3>
+                                <p class="forecast-desc">Partly Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 10 mph SW
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Saturday, 3rd September</h5>
+                                <div class="sun-icon"></div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    76°F
+                                </h3>
+                                <p class="forecast-desc">Sunny</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 9 mph SE
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 55%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Sunday, 4th September</h5>
+                                <div class="cloudy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    74°F
+                                </h3>
+                                <p class="forecast-desc">Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 8 mph NW
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 63%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tenDay" role="tabpanel" aria-labelledby="ten-day-tab">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Monday, 29th August</h5>
+                                <div class="sun-icon"></div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    75°F
+                                </h3>
+                                <p class="forecast-desc">Sunny</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 10 mph E
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Tuesday, 30th August</h5>
+                                <div class="cloudy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                                                        <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    73°F
+                                </h3>
+                                <p class="forecast-desc">Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+                                    
+                                    Wind: 8 mph W
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 65%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Wednesday, 31st August</h5>
+                                <div class="rainy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    70°F
+                                </h3>
+                                <p class="forecast-desc">Rainy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 12 mph N
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 70%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Thursday, 1st September</h5>
+                                <div class="thunderstorm-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="lightning">
+                                        <div class="bolt"></div>
+                                        <div class="bolt2"></div>
+                                    </div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop2"></div>
+                                    <div class="raindrop3"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    68°F
+                                </h3>
+                                <p class="forecast-desc">Thunderstorm</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 14 mph S
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 75%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Friday, 2nd September</h5>
+                                <div class="partly-cloudy-icon">
+                                    <div class="sun"></div>
+                                    <div class="cloud"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    72°F
+                                </h3>
+                                <p class="forecast-desc">Partly Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 10 mph SW
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Saturday, 3rd September</h5>
+                                <div class="sun-icon"></div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    76°F
+                                </h3>
+                                <p class="forecast-desc">Sunny</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 9 mph SE
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 55%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Sunday, 4th September</h5>
+                                <div class="cloudy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="fa-solid fa-temperature-high" style="color: #154eb2;"></i>
+
+                                    74°F
+                                </h3>
+                                <p class="forecast-desc">Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="fa-solid fa-wind" style="color: #ffffff;"></i>
+
+                                    Wind: 8 mph NW
+                                </p>
+                                <p>
+                                    <span class="material-symbols-outlined">
+                                        humidity_mid
+                                        </span>
+                                    Humidity: 63%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Monday, 5th September</h5>
+                                <div class="rainy-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="bi bi-thermometer-sun"></i>
+                                    71°F
+                                </h3>
+                                <p class="forecast-desc">Rainy</p>
+                                <p class="forecast-details">
+                                    <i class="bi bi-wind"></i>
+                                    Wind: 11 mph NE
+                                </p>
+                                <p>
+                                    <i class="bi bi-droplet-half"></i>
+                                    Humidity: 68%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Tuesday, 6th September</h5>
+                                <div class="thunderstorm-icon">
+                                    <div class="cloud"></div>
+                                    <div class="cloud2"></div>
+                                    <div class="lightning">
+                                        <div class="bolt"></div>
+                                        <div class="bolt2"></div>
+                                    </div>
+                                    <div class="raindrop"></div>
+                                    <div class="raindrop2"></div>
+                                    <div class="raindrop3"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="bi bi-thermometer-sun"></i>
+                                    69°F
+                                </h3>
+                                <p class="forecast-desc">Thunderstorm</p>
+                                <p class="forecast-details">
+                                    <i class="bi bi-wind"></i>
+                                    Wind: 13 mph S
+                                </p>
+                                <p>
+                                    <i class="bi bi-droplet-half"></i>
+                                    Humidity: 72%
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                            <div class="forecast-card">
+                                <h5 class="forecast-date">Wednesday, 7th September</h5>
+                                <div class="partly-cloudy-icon">
+                                    <div class="sun"></div>
+                                    <div class="cloud"></div>
+                                </div>
+                                <h3 class="forecast-temp">
+                                    <i class="bi bi-thermometer-sun"></i>
+                                    73°F
+                                </h3>
+                                <p class="forecast-desc">Partly Cloudy</p>
+                                <p class="forecast-details">
+                                    <i class="bi bi-wind"></i>
+                                    Wind: 9 mph SW
+                                </p>
+                                <p>
+                                    <i class="bi bi-droplet-half"></i>
+                                    Humidity: 60%
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section id="extendedForecast" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Extended Forecast</h2>
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide card1">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Monday, 29th August</h4>
+                            <div class="sun-icon"></div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                75°F
+                            </h5>
+                            <p class="forecast-desc">Sunny</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 65°F • 9 AM: 70°F • 12 PM: 75°F • 3 PM: 73°F • 6 PM: 70°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>10%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>High</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>10 mph E</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>60%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Tuesday, 30th August</h4>
+                            <div class="partly-cloudy-icon mt-4">
+                                <div class="sun" ></div>
+                                <div class="cloud" style="margin-top: -10%;"></div>
+                            </div>
+                            <h5 class="forecast-temp" style="margin-top: -5%;">
+                                <i class="bi bi-thermometer-sun"></i>
+                                70°F
+                            </h5>
+                            <p class="forecast-desc">Partly cloudy</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 60°F • 9 AM: 65°F • 12 PM: 70°F • 3 PM: 68°F • 6 PM: 65°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>20%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>Moderate</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>15 mph S</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>55%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Wednesday, 31st August</h4>
+                            <div class="cloudy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                            </div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                65°F
+                            </h5>
+                            <p class="forecast-desc">Cloudy</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 55°F • 9 AM: 60°F • 12 PM: 65°F • 3 PM: 63°F • 6 PM: 60°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>30%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>Low</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>10 mph W</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>60%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Thursday, 1st September</h4>
+                            <div class="rainy-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop"></div>
+                            </div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                60°F
+                            </h5>
+                            <p class="forecast-desc">Rainy</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 55°F • 9 AM: 60°F • 12 PM: 65°F • 3 PM: 63°F • 6 PM: 55°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>60%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>Low</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>15 mph NW</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>70%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Friday, 2nd September</h4>
+                            <div class="thunderstorm-icon">
+                                <div class="cloud"></div>
+                                <div class="cloud2"></div>
+                                <div class="lightning">
+                                    <div class="bolt"></div>
+                                    <div class="bolt2"></div>
+                                </div>
+                                <div class="raindrop"></div>
+                                <div class="raindrop2"></div>
+                                <div class="raindrop3"></div>
+                            </div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                65°F
+                            </h5>
+                            <p class="forecast-desc">Thunderstorm</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 60°F • 9 AM: 65°F • 12 PM: 70°F • 3 PM: 68</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>55%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>Low</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>14 mph NW</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>65%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Saturday, 3rd September</h4>
+                            <div class="snow-icon">
+                                <div class="cloud"></div>
+                                <div class="snowflake"></div>
+                                <div class="snowflake"></div>
+                                <div class="snowflake"></div>
+                                <div class="snowflake"></div>
+                            </div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                55°F
+                            </h5>
+                            <p class="forecast-desc">Snow</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 50°F • 9 AM: 55°F • 12 PM: 60°F • 3 PM: 63°F • 6 PM: 55°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>0%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>Low</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>5 mph N</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>45%</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="extended-item">
+                            <h4 class="forecast-date">Sunday, 4th September</h4>
+                            <div class="sun-icon"></div>
+                            <h5 class="forecast-temp">
+                                <i class="bi bi-thermometer-sun"></i>
+                                60°F
+                            </h5>
+                            <p class="forecast-desc">Sunny</p>
+                            <h6>
+                                <i class="bi bi-clock"></i>
+                                Hourly Temperature
+                            </h6>
+                            <p>6 AM: 55°F • 9 AM: 60°F • 12 PM: 65°F • 3 PM: 63°F • 6 PM: 55°F</p>
+                            <h6>
+                                <i class="bi bi-cloud-drizzle"></i>
+                                Chance of Precipitation
+                            </h6>
+                            <p>10%</p>
+                            <h6>
+                                <i class="bi bi-sun"></i>
+                                UV Index
+                            </h6>
+                            <p>High</p>
+                            <h6>
+                                <i class="bi bi-wind"></i>
+                                Wind
+                            </h6>
+                            <p>10 mph E</p>
+                            <h6>
+                                <i class="bi bi-droplet-half"></i>
+                                Humidity
+                            </h6>
+                            <p>50%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section id="weatherMaps" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Weather Maps</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="map-card">
+                        <a href="weather-temperature-map.jpg" class="simple-lightbox">
+                            <img src="weather-temperature-map.jpg" alt="Temperature Map">
+                            <h5>Temperature Map</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="map-card">
+                        <a href="weather-precipitation-map.jpg" class="simple-lightbox">
+                            <img src="weather-precipitation-map.jpg" alt="Precipitation Map">
+                            <h5>Precipitation Map</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="map-card">
+                        <a href="weather-wind-map.png" class="simple-lightbox">
+                            <img src="weather-wind-map.png" alt="Wind Map">
+                            <h5>Wind Map</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="weatherRadar" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Weather Radar</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item"
+                            src="https://embed.windy.com/embed2.html?lat=40.730610&lon=-73.935242&zoom=10"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="alerts" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Weather Alerts</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="alert-card">
+                        <i class="fa-solid fa-triangle-exclamation fa-2xl" style="color: #FF0000;"></i>
+                        <h5>Thunderstorm Warning</h5>
+                        <p>Severe thunderstorms expected in the area. Take necessary precautions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="alert-card">
+                        <i class="fa-solid fa-cloud-showers-heavy fa-2xl" style="color: #FF0000;"></i>
+                        
+                        <h5>Flood Alert</h5>
+                        <p>Heavy rainfall expected. Possible flooding in low-lying areas.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="alert-card">
+                        <i class="fa-regular fa-snowflake fa-2xl" style="color: #FF0000;"></i>
+                        <h5>Snowstorm Warning</h5>
+                        <p>Heavy snowfall expected. Travel disruptions are likely.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- fontawesome code -->
+    <script src="https://kit.fontawesome.com/1505bab2a0.js" crossorigin="anonymous"></script>
+    <!-- Add Swiper JS -->
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="simple-lightbox.min.js"></script>
+    <script src="swiper-bundle.min.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function getWeather() {
+            const city = document.getElementById("cityInput").value;
+            const apiKey = "WZ3TZA7G9KX8WAL4JS2G2KDXK";
+            const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`;
+    
+            fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayWeather(data, city);
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                document.getElementById("weatherInfo").innerText = "Error fetching weather data";
+            });
+        }
+    
+        function displayWeather(weatherData, city) {
+            const cityName = city;
+            const currentConditions = weatherData.currentConditions;
+            const temperatureCelsius = currentConditions.temp;
+            const conditionsDescription = currentConditions.conditions;
+    
+ 
+            document.querySelector('.weather-location').innerHTML = `
+                <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+                ${cityName}
+            `;
+            document.querySelector('.weather-date').innerHTML = `
+                <i class="fa-regular fa-calendar"></i>
+                ${new Date().toDateString()}
+            `;
+    
+            document.querySelector('.weather-temp').innerHTML = `
+                <i class="fa-solid fa-temperature-high" style="color: #ffffff;"></i>
+                ${temperatureCelsius}°C
+            `;
+            document.querySelector('.weather-desc').innerText = conditionsDescription;
+    
+            document.querySelector('.weather-details').innerHTML = `
+                <p>
+                    <i class="material-icons">water_drop</i>
+                    Feels like ${currentConditions.feelslike}°C
+                </p>
+                <p>
+                    <i class="bi bi-droplet-half"></i>
+                    Humidity ${currentConditions.humidity}%
+                </p>
+                <p>
+                    <i class="bi bi-wind"></i>
+                    Wind ${currentConditions.windspeed} km/h ${currentConditions.winddir}
+                </p>
+            `;
+        }
+    </script>
+    
+    
+<script>
+    var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    var swiper2 = new Swiper('.swiper-container2', {
+        // Add your Swiper options here
+        slidesPerView: 'auto', // Show as many slides as possible without scrolling
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+});
+</script>
+</body>
+
+</html>

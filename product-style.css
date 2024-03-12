@@ -1,0 +1,370 @@
+/* #439243 */
+/* #F0CF83 */
+/* #052501 */
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.top{
+height: 120px;
+width: auto;
+border: none;
+display: flex;
+align-items: center;
+}
+
+.img{
+  margin-left: 80px;
+}
+
+
+.name a{
+  width: 800px;
+  height: 120px;
+  margin-left: 70px;
+  font-size: 100px;
+  font-family: 'Gagalin';
+  text-decoration: none;
+  color: black;
+}
+
+.button {
+  margin-left: 130px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 20px;
+  color: #052501;
+  border: 2px solid #F0CF83;
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 500;
+  font-family: "Times New Roman";
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: #052501;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.button:hover::before {
+  scale: 3;
+}
+
+.button:hover {
+  color: #F0CF83;
+  scale: 1.1;
+  box-shadow: 0 0px 20px #F0CF83;
+}
+
+.button:active {
+  scale: 1;
+}
+
+hr{
+  border-top: 1px solid #052501;
+}
+
+.nav-bar{
+  height: 70px;
+  width: auto;
+  border: 1px solid #052501;
+  font-size: 22px;
+  background-color: #052501;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav-bar a{
+  padding: 6px;
+  border-radius: 5px;
+  color: #F0CF83;
+  text-decoration: none;
+}
+
+.nav-bar a:hover{
+  border: 3px solid #F0CF83;
+  border-radius: 34px;
+  background-color: #fff;
+  color: #052501;
+  padding: 5px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+::selection{
+    color: white;
+    background-color: #052501
+}
+
+.cart-icon {
+  position: fixed;
+  bottom: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  z-index: 999; /* Ensure it's above other content */
+}
+
+.cart-icon img {
+  width: 100px; /* Adjust the size of your cart icon */
+  height:100px; /* Adjust the size of your cart icon */
+  cursor: pointer; /* Make it clear it's clickable */
+}
+.fa-cart-shopping{
+  font-size: 50px;
+color: #052501
+}
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.p1{
+  color:  #439243;
+  
+
+}
+/* Modal CSS */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#cartItems {
+  display: flex; /* Use flexbox to display items in a row */
+  flex-direction: row; /* Make sure items are displayed horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+  justify-content: flex-start; /* Align items to the start of the container */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.cart-item {
+  /* Adjust styles for individual cart items as needed */
+  margin: 10px; /* Add some spacing between items */
+}
+
+/* Add this CSS to your existing styles */
+.card {
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image img {
+  max-width: 100%;
+  max-height: 200px; /* Set a maximum height for the images */
+  height: auto;
+  object-fit: contain; /* Ensure the image fits without being cropped */
+}
+
+.card-text {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.card-text p {
+  margin-bottom: 5px;
+}
+
+.card-text p.p1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-text p.bl1 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text p.bl1 span i {
+  cursor: pointer;
+}
+
+/* Set fixed height for cards */
+.card {
+  height: 100%;
+}
+
+/* Ensuring equal height for all cards */
+.row [class*="col-lg-3"] {
+  display: flex;
+}
+
+/* Center align text in cards */
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Adjusting alignment of the price and add to cart icon */
+.card-text p.bl1 span i {
+  align-self: flex-end;
+}
+/* Add this CSS to your existing stylesheet or create a new one */
+
+/* Modal content */
+.modal-content {
+  width: 400px; /* Adjust the width as per your design */
+}
+
+/* Cart item container */
+.cart-item {
+  border-bottom: 1px solid #ccc; /* Add border between each item */
+  padding: 10px; /* Add padding to create space between items */
+}
+
+/* Cart item image */
+.cart-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* Ensure the entire image fits within the specified dimensions */
+  margin-right: 10px; /* Add margin to separate the image from the text */
+}
+
+/* Cart item text */
+.cart-item-text {
+  display: inline-block; /* Ensure text doesn't overflow */
+  vertical-align: middle; /* Align text vertically with image */
+}
+
+
+/* Add box shadow to card on hover */
+.card:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adjust shadow as per your preference */
+}
+
+/* Add background color and padding to sections */
+section {
+  background-color: #f9f9f9; /* Light gray background color */
+  padding: 30px 0; /* Add padding to the top and bottom of sections */
+}
+
+/* Center align section headings */
+h1 {
+  text-align: center;
+  margin-bottom: 30px; /* Add some space below the headings */
+}
+
+/* Adjust margin between sections */
+section:not(:first-child) {
+  margin-top: 50px; /* Add margin between sections */
+}
+
+/* Adjust margin and padding of the container */
+.container {
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 15px; /* Add some padding to the sides of the container */
+}
+
+/* Adjust padding of the card text */
+.card-text {
+  padding: 15px 10px; /* Add padding to the top and bottom, reduce padding on the sides */
+}
+
+/* Add hover effect to plus icons */
+.fa-plus:hover {
+  background-color: #439243; /* Change background color on hover */
+  color: white; /* Change text color on hover */
+}
+
+/* Style the checkout button */
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #052501; /* Dark green background color */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px; /* Add some space above the button */
+}
+
+/* Add hover effect to checkout button */
+.checkout-btn:hover {
+  background-color: #439243; /* Change background color on hover */
+}
+
+/* Center align the modal content */
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  background-color: white; /* White background color for modal content */
+}
+
+/* Adjust close button in modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding:0;
+}
+p{
+    
+}
+body{
+    font-size: 14px;
+    background-size: cover;
+}
+.container{
+    width: 80%;
+    margin: 50px auto;
+}
+.contact_box{
+    background: #fff;
+    display: flex;
+}
+.contact_left{
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+.contact_right{
+    flex-basis: 60%;
+    padding: 40px;
+    background-image: url("C:\xampp\htdocs\project\images\kisan.jpeg");
+    color: #fff;
+
+}
+h1{
+    margin-top: 10px;
+    font-family: Times New Roman;
+}
+.container p{
+    margin-bottom: 40px;
+
+}
+.input_row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+.input_row .input_group{
+    flex-basis: 45%;
+}
+input{
+    border: none;
+    border-bottom: 1px solid #439243;
+    outline: none;
+}
+textarea{
+    width: 100%;
+    border: 1px solid #439243;
+    outline: none;
+    box-sizing: border-box;
+}
+label{
+    margin-bottom: 6px;
+    display: block;
+
+}
+button{
+    background: #439243;
+    width: 100px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    height: 35px;
+    border-radius: 30px;
+    margin-top: 20px;
+    box-shadow:0px 5px 15px 0px rgba(28,0,181,0.3) ;
+
+}
+.contact_right{
+    float: right;
+    text-align: center;
+}
+body {
+  margin: 0;
+  padding:0;
+  background: #262626;
+}
+
+ul {
+  display: flex;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+ justify-content: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  z-index: 1;
+}
+
+ul li a .icon {
+  position: relative;
+  color: #439243;
+  transition: .5s;
+  z-index: 3;
+  bottom: 20%;
+}
+
+ul li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+ul li a:hover:before {
+  top: 0;
+}
+
+ul li:nth-child(1) a:before{
+  background: #3b5999;
+}
+
+ul li:nth-child(2) a:before{
+  background: #55acee;
+}
+
+ul li:nth-child(3) a:before {
+  background: #0077b5;
+}
+
+ul li:nth-child(4) a:before {
+  background: #dd4b39;
+}
+#icons{
+    margin-left: 280px;
+}
+a{
+    
+}

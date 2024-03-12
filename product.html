@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <title>AgroFarm -Store</title>
+  <link rel="stylesheet" href="product-style.css">
+  <!-- bootstrap link -->
+  <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="chat.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <script src="chat.js" defer></script>
+</head>
+<body>
+  <div class="top">
+    <div class="img"><img src="Agro-logo-main.png" alt="Agri_Gold"></div>
+    <div class="name"><a href="AgroFarm.html">AGRO FARM</a></div>
+    <a href="http://localhost/karthik/sigupin.php">
+      <button  class="button">Sign In</button>
+    </a>
+</div>
+<div class="nav-bar">
+    <a href="AgroFarm.html">Home</a>
+    <a href="pestcontrol.html">Pest Control</a>
+    <a href="product.html">Products</a>
+    <a href="weather.html">Weather</a> 
+    <a href="about.html">About</a>
+    <a href="http://localhost/karthik/contact.php">Contact Us</a>
+
+</div>
+
+<!-- Cart Icon -->
+<div class="cart-icon" onclick="openCartModal()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span class="cart-count" id="cartcount">0</span>
+</div>
+
+<!-- Modal -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCartModal()">&times;</span>
+    <h2>Shopping Cart</h2>
+    <div id="cartItems" class="cart-items"></div>
+    <p>Total: ₹<span id="cartTotal">0</span></p>
+    <button onclick="checkout()" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="col-lg-12 row">
+      <h1 style="font-family: Bebas Neue, cursive;">SPRAYERS</h1>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="pasura_toto_double_motor_battery_sprayer.png" width="100%" height="253px">
+          </div>
+          <div class="card-text">
+            <p class="p1">pasura_toto_double_motor_battery_sprayer</p>
+            <p class="bl1">₹3590<span><i class="fa-solid fa-plus" onclick="addToCart('pasura_toto_double_motor_battery_sprayer',3590,'./sprayers/pasura_toto_double_motor_battery_sprayer.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="bright_future_sprayer_1.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Agricultural Battery Cum Hand Operated Sprayer (2 In 1) -16L</p>
+            <p class="bl1">₹2250<span><i class="fa-solid fa-plus" onclick="addToCart('Agricultural Battery Cum Hand Operated Sprayer (2 In 1) -16L',2250,'./sprayers/bright_future_sprayer_1.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="bm-015_1.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Pasura Battery Operated Sprayer - 16-BM-015 (12-12AH) -16 Liter</p>
+            <p class="bl1">₹2950<span><i class="fa-solid fa-plus" onclick="addToCart('Pasura Battery Operated Sprayer - 16-BM-015 (12-12AH) -16 Liter', 2950,'./sprayers/bm-015_1.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="horse_power.jpg-removebg-preview.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Pasura Manual Sprayer Pump (Horse Power - Double Pump)- 16 Liter</p>
+            <p class="bl1">₹1250<span><i class="fa-solid fa-plus" onclick="addToCart('Pasura Manual Sprayer Pump (Horse Power - Double Pump)- 16 Liter',1250,'./sprayers/horse_power.jpg-removebg-preview.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr  style="color: #052501;">
+<section class="mt-5">
+  <div class="container">
+    <div class="col-lg-12 row">
+      <h1 style="font-family: Bebas Neue, cursive;">SEEDS</h1>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="singham_1.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Pumpkin - Singham F-1 (Oblong) - 50g</p>
+            <p class="bl1">₹245<span><i class="fa-solid fa-plus" onclick="addToCart('Pumpkin - Singham F-1 (Oblong) - 50g',245,'./seeds/singham_1.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="ts-18_1.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Beans - TS-18 (Long yard beans) - 100g</p>
+            <p class="bl1">₹170<span><i class="fa-solid fa-plus" onclick="addToCart('Beans - TS-18 (Long yard beans) - 100g',170,'./seeds/ts-18_1.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="ruchi_1_1.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Bhindi-Ruchi-500g</p>
+            <p class="bl1">₹260<span><i class="fa-solid fa-plus" onclick="addToCart('Bhindi-Ruchi-500g', 260,'./seeds/ruchi_1_1.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="early_ritu_1.jpg" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">carrot-early-ritu-imp-100-gms-tin</p>
+            <p class="bl1">₹225<span><i class="fa-solid fa-plus" onclick="addToCart('carrot-early-ritu-imp-100-gms-tin',225,'./seeds/early_ritu_1.jpg')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="color: #052501;">
+<section class="mt-5">
+  <div class="container">
+    <div class="col-lg-12 row">
+      <h1 style="font-family: Bebas Neue, cursive;">PESTICIDES</h1>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="neem oil.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1"> Go Garden Water Soluble Neem Oil for Plant Pest Control </p>
+            <p class="bl1">₹259<span><i class="fa-solid fa-plus" onclick="addToCart(' Go Garden Water Soluble Neem Oil for Plant Pest Control',259,'./pesticide/neem oil.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="organic pesticide.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Gardenica Organic / Herbal Pesticide To Keep Plant Healthy </p>
+            <p class="bl1">₹388<span><i class="fa-solid fa-plus" onclick="addToCart(' Gardenica Organic / Herbal Pesticide To Keep Plant Healthy ',388,'./pesticide/organic pesticide.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="kar.JPG" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Thorlet Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% Zc, Best Systemic Insecticide Fo</p>
+            <p class="bl1">₹499<span><i class="fa-solid fa-plus" onclick="addToCart('Thorlet Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% Zc, Best Systemic Insecticide Fo',499,'./pesticide/Thorlet Thiamethoxam 12.6% + Lambda Cyhalothrin 9.5% Zc, Best Systemic Insecticide Fo.JPG')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="him.JPG" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Emoxam Emamectin Benzoate 3% + Thaimothoxam 12% WDG, Powder Insecticide for</p>
+            <p class="bl1">₹777<span><i class="fa-solid fa-plus" onclick="addToCart('Emoxam Emamectin Benzoate 3% + Thaimothoxam 12% WDG, Powder Insecticide for',777,'./pesticide/Emoxam Emamectin Benzoate 3% + Thaimothoxam 12% WDG, Powder Insecticide for.JPG')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr style="color: #052501;">
+<section class="mt-5">
+  <div class="container">
+    <div class="col-lg-12 row">
+      <h1 style="font-family: Bebas Neue, cursive;">TOOLS</h1>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="rapa.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Dhara Spade Made with Stainless Steel and Wooden Handle </p>
+            <p class="bl1">₹499<span><i class="fa-solid fa-plus" onclick="addToCart('Dhara Spade Made with Stainless Steel and Wooden Handle ',499,'./tools/rapa.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="unison.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Unison UEI/1155 Mild Steel Manual Paddy Weeder by Moglix</p>
+            <p class="bl1">₹1199<span><i class="fa-solid fa-plus" onclick="addToCart('Unison UEI/1155 Mild Steel Manual Paddy Weeder by Moglix',1199,'.unison.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="iron handle.png" width="100%" height="316px">
+          </div>
+          <div class="card-text">
+            <p class="p1"> Kinger Garden Iron Handle Square Head Shovel for Outdoor </p>
+            <p class="bl1">₹999<span><i class="fa-solid fa-plus" onclick="addToCart('Kinger Garden Iron Handle Square Head Shovel for Outdoor ',999,'./tools/iron handle.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="card text-center">
+          <div class="card-image">
+            <img src="edward tools.png" width="100%">
+          </div>
+          <div class="card-text">
+            <p class="p1">Edward Tools Hoe and Cultivator Hand Tiller </p>
+            <p class="bl1">₹1999<span><i class="fa-solid fa-plus" onclick="addToCart('Edward Tools Hoe and Cultivator Hand Tiller ',1999,'./tools/edward tools.png')" style="margin-left: 180px; background-color: #052501; border-radius: 100%; padding: 5px 6px; color: #ffffff;"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- JavaScript files -->
+<script src="./bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+<script src="product.js"></script>
+   <!-- fontawesome link -->
+   <script src="https://kit.fontawesome.com/1505bab2a0.js" crossorigin="anonymous"></script>
+</body>
+</html>
